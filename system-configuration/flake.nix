@@ -5,10 +5,12 @@
     feonix.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git";
   };
 
-  outputs = { self, nixpkgs, system-manager, feonix }:
+  outputs = { self, nixpkgs, system-manager, ... }@inputs:
     let
+      inherit (self) outputs;
       mkSystemManager = {system ? "aarch64-linux", extraModules ? []}:
         system-manager.lib.makeSystemConfig {
+	  extraSpecialArgs = {inherit inputs outputs; };
           modules = [
             ./modules/feonix-base.nix
 	    {

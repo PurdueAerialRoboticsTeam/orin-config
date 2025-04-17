@@ -1,4 +1,4 @@
-{ config, pkgs, feonix, lib, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
 /*
@@ -10,7 +10,7 @@
     };
   };
   */
-      environment.systemPackages = with feonix.packages.${pkgs.system}; [
+      environment.systemPackages = with inputs.feonix.packages.${pkgs.system}; [
         feonix
         configuranator2000
         sauron
@@ -40,6 +40,6 @@
           ];
         };
       };
-*/
   };
+*/
 }
