@@ -1,20 +1,23 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  # NVIDIA Jetson hardware configuration
+  # NVIDIA Jetson specific configuration
   boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.nvidia-jetpack.enable = true;
 
-  # CUDA configuration (CORRECTED)
+  # CUDA configuration
   environment.variables = {
     CUDA_PATH = "${pkgs.cudaPackages.cudatoolkit}";
-    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.cudaPackages.cudnn}/lib";
+    LD_LIBRARY_PATH = lib.makeLibraryPath [
+      pkgs.stdenv.cc.cc.lib
+      pkgs.cudaPackages.cudnn
+      pkgs.cudaPackages.tensorrt
+    ];
   };
 
-  # System packages
-  environment.systemPackages = with pkgs; [
-    cudaPackages.cudnn
-    cudaPackages.tensorrt
-    nvidia-jetpack
-  ];
+  # Required kernel modules
+  boot.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" ];
+  boot.extraModprobeConfig = ''
+    options nvidia NVreg_PreserveVideoMemoryAllocations=1
+  '';
 }
