@@ -1,6 +1,7 @@
-{ config, pkgs, feonix-flake, lib, ... }:
+{ config, pkgs, feonix, lib, ... }:
 
 {
+/*
   options.services.feonix = {
     enable = lib.mkOption {
       type    = lib.types.bool;
@@ -8,14 +9,24 @@
       description = "Enable the Feonix daemon service";
     };
   };
-  config = lib.mkIf config.services.feonix.enable {
-      environment.systemPackages = with feonix-flake.packages.${pkgs.system}; [
+  */
+      environment.systemPackages = with feonix.packages.${pkgs.system}; [
         feonix
         configuranator2000
         sauron
         sitl
         gnc-with-sitl
       ];
+  /*
+  config = { 
+      environment.systemPackages = with feonix.packages.${pkgs.system}; [
+        feonix
+        configuranator2000
+        sauron
+        sitl
+        gnc-with-sitl
+      ];
+      */
 /*
       systemd.services.feonix-core = {
         description = "Feonix Core Service";

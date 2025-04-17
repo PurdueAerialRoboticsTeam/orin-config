@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     system-manager.url = "github:numtide/system-manager";
-    feonix-flake.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git";
+    feonix.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git";
   };
 
   outputs = { self, nixpkgs, system-manager, feonix-flake }:
@@ -15,7 +15,7 @@
             config = {
               nixpkgs.hostPlatform = system;
               system-manager.allowAnyDistro = true;
-              services.feonix.enable = true;
+              # services.feonix.enable = true;
             };
           }
         ] ++ extraModules;
