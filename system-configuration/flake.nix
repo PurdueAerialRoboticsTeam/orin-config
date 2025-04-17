@@ -1,25 +1,36 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     system-manager.url = "github:numtide/system-manager";
-    feonix.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git";
+    feonix-flake.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git";
   };
 
-  outputs = { self, nixpkgs, system-manager, feonix }:
+  outputs = { self, nixpkgs, system-manager, feonix-flake }:
     let
-      system = "aarch64-linux";
+      mkSystemManager = {system ? "aarch64-linux", extraModules ? []}:
+        system-manager.lib.makeSystemConfig {
+          modules = [
+            ./modules/feonix-base.nix
+	    {
+            config = {
+              nixpkgs.hostPlatform = system;
+              system-manager.allowAnyDistro = true;
+              services.feonix.enable = true;
+            };
+          }
+        ] ++ extraModules;
+      }; 
     in {
-      systemConfigs.jetson = system-manager.lib.makeSystemConfig {
-        modules = [
-          ./modules/jetson-hardware.nix
-          ({ pkgs, ... }: {
-            environment.systemPackages = with feonix.packages.${system}; [
-              feonix-gnc
-              configuranator2000
-              sauron
-            ];
-          })
-        ];
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+      systemConfigs = {
+        default = mkSystemManager {
+          extraModules = [
+            ./modules/jetson-hardware.nix
+          ];
+        };
+        dev = mkSystemManager {
+          system = "x86_64-linux";
+        };
       };
     };
 }
