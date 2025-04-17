@@ -5,7 +5,7 @@
     feonix.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git";
   };
 
-  outputs = { self, nixpkgs, system-manager, feonix-flake }:
+  outputs = { self, nixpkgs, system-manager, feonix }:
     let
       mkSystemManager = {system ? "aarch64-linux", extraModules ? []}:
         system-manager.lib.makeSystemConfig {
