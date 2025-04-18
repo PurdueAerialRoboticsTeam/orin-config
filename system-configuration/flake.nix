@@ -23,7 +23,7 @@
         ] ++ extraModules;
       }; 
     in {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
       systemConfigs = {
         default = mkSystemManager {
           extraModules = [
