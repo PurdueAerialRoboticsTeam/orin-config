@@ -1,7 +1,11 @@
-{ config, pkgs, inputs, lib, ... }:
-
 {
-/*
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
+  /*
   options.services.feonix = {
     enable = lib.mkOption {
       type    = lib.types.bool;
@@ -10,15 +14,15 @@
     };
   };
   */
-      environment.systemPackages = with inputs.feonix.packages.${pkgs.system}; [
-        feonix
-        configuranator2000
-        sauron
-        sitl
-        gnc-with-sitl
-      ];
+  environment.systemPackages = with inputs.feonix.packages.${pkgs.system}; [
+    feonix
+    configuranator2000
+    sauron
+    sitl
+    gnc-with-sitl
+  ];
   /*
-  config = { 
+  config = {
       environment.systemPackages = with feonix.packages.${pkgs.system}; [
         feonix
         configuranator2000
@@ -26,8 +30,8 @@
         sitl
         gnc-with-sitl
       ];
-      */
-/*
+  */
+  /*
       systemd.services.feonix-core = {
         description = "Feonix Core Service";
         wantedBy = [ "multi-user.target" ];
@@ -41,5 +45,5 @@
         };
       };
   };
-*/
+  */
 }

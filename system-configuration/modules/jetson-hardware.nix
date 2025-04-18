@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # NVIDIA Jetson hardware configuration
   boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.nvidia-jetpack.enable = true;
