@@ -33,7 +33,7 @@
         gnc-with-sitl
       ];
 
-      environment.etc."feonix/config.toml".source = ./feonix-config.toml;
+      environment.etc."feonix-config.toml".source = ./feonix-config.toml;
 
       systemd.services.feonix-core = {
         description = "Feonix Core Service";
