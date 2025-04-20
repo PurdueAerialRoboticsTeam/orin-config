@@ -1,22 +1,57 @@
 {
-  description = "Orin System Manager";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    feonix.url = "github:PurdueAerialRoboticsTeam/feonix";
-    system-manager = {
-      url = "github:numtide/system-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    system-manager.url = "github:numtide/system-manager";
+    feonix.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git?ref=systemManagerTest";
   };
 
-  outputs = { self, flake-utils, nixpkgs, feonix, system-manager }: {
-    systemConfigs.default = system-manager.lib.makeSystemConfig {
-      modules = [
-        ./modules
-        # Import the Feonix NixOS module provided by your Feonix flake.
-        feonix.nixosModules.feonix
-        { services.feonix.enable = true; }
-      ];
+  outputs = {
+    self,
+    nixpkgs,
+    system-manager,
+    feonix,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+    mkSystemManager = {
+      system ? "aarch64-linux",
+      extraModules ? [],
+    }:
+      system-manager.lib.makeSystemConfig {
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules =
+          [
+            ./modules/feonix-base.nix
+            {
+              config = {
+                nixpkgs.hostPlatform = system;
+                system-manager.allowAnyDistro = true;
+                # services.feonix.enable = true;
+              };
+            }
+          ]
+          ++ extraModules;
+      };
+  in {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+    systemConfigs = {
+      default = mkSystemManager {
+        extraModules = [
+          ./modules/jetson-hardware.nix
+          {
+            _module.args.feonix = feonix;
+          }
+        ];
+      };
+      dev = mkSystemManager {
+        system = "x86_64-linux";
+        extraModules = [
+          { _module.args.feonix = feonix; }
+          {
+            config = { nixpkgs.config.allowUnfree = true; };
+          }
+        ];
+      };
     };
   };
 }
