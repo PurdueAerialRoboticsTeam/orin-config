@@ -35,7 +35,10 @@
 
       environment.etc."feonix-config.toml".source = ./feonix-config.toml;
       environment.etc."feonix-models/yolov8n.onnx".source = ./models/yolov8n.onnx;
-      environment.etc."feonix-images".source = ./images;
+
+      systemd.tmpfiles.rules = [
+        "L+ /feonix-images - - - - ${./images}"
+      ];
 
       systemd.services.feonix-core = {
         description = "Feonix Core Service";
