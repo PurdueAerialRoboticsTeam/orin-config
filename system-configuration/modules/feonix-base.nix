@@ -33,8 +33,8 @@
         gnc-with-sitl
       ];
 
-      environment.etc."feonix-config.toml".source = ./feonix-config.toml;
-      environment.etc."feonix-models/yolov8n.onnx".source = ./models/yolov8n.onnx;
+      environment.etc."feonix-config.toml".source = pkgs.lib.cleanSource ./feonix-config.toml;
+      environment.etc."feonix-models/yolov8n.onnx".source = pkgs.lib.cleanSource ./models/yolov8n.onnx;
 
       systemd.tmpfiles.rules = [
         "L+ /feonix-images - - - - ${./images}"

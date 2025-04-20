@@ -2,11 +2,11 @@
   "nodes": {
     "crane": {
       "locked": {
-        "lastModified": 1742394900,
-        "narHash": "sha256-vVOAp9ahvnU+fQoKd4SEXB2JG2wbENkpqcwlkIXgUC0=",
+        "lastModified": 1745022865,
+        "narHash": "sha256-tXL4qUlyYZEGOHUKUWjmmcvJjjLQ+4U38lPWSc8Cgdo=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "70947c1908108c0c551ddfd73d4f750ff2ea67cd",
+        "rev": "25ca4c50039d91ad88cc0b8feacb9ad7f748dedf",
         "type": "github"
       },
       "original": {
@@ -24,11 +24,11 @@
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
-        "lastModified": 1742452566,
-        "narHash": "sha256-sVuLDQ2UIWfXUBbctzrZrXM2X05YjX08K7XHMztt36E=",
+        "lastModified": 1745130855,
+        "narHash": "sha256-FauuSAbQ1tgPZjSvy6jldEs6eAFE+157Y/aNHh9GLTU=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "7d9ba794daf5e8cc7ee728859bc688d8e26d5f06",
+        "rev": "22330c70f3c59e3ae386d9f5f6840f44f3b4f3c7",
         "type": "github"
       },
       "original": {
@@ -48,11 +48,11 @@
         "sitl-src": "sitl-src"
       },
       "locked": {
-        "lastModified": 1745123619,
-        "narHash": "sha256-FsWh+0qarMC4ZXxsbZdNlNvdJtaZtvZTRVBzTHvIS4s=",
+        "lastModified": 1745182995,
+        "narHash": "sha256-z1SXtWgwYWrOZl8E/2zlVmMO3wKTzZ0k+JYQh/1Lmlk=",
         "ref": "systemManagerTest",
-        "rev": "e9f2017a4b7816e998e850ace410debac2864c66",
-        "revCount": 648,
+        "rev": "b5243fbb40bf0c8e91b83f0b8ce9a39927178124",
+        "revCount": 651,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git"
       },
@@ -151,11 +151,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1744930189,
-        "narHash": "sha256-CoJhVp8RycesedPEtdCFof9iDePTmzI0JdE1lillAWg=",
+        "lastModified": 1745025886,
+        "narHash": "sha256-0y6VcWzBfmjvYTuKPE9dGPOyfVljqtJ39Set8okBVoU=",
         "ref": "refs/heads/master",
-        "rev": "f75909f8c1201c51011af96f39716fa60675b155",
-        "revCount": 157,
+        "rev": "363eefcbc045d50e5333f3b4c60bd5ec93fb2f24",
+        "revCount": 160,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/GNC-2024-2025.git"
       },
@@ -166,11 +166,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1743568003,
-        "narHash": "sha256-ZID5T65E8ruHqWRcdvZLsczWDOAWIE7om+vQOREwiX0=",
+        "lastModified": 1744868846,
+        "narHash": "sha256-5RJTdUHDmj12Qsv7XOhuospjAjATNiTMElplWnJE9Hs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b7ba7f9f45c5cd0d8625e9e217c28f8eb6a19a76",
+        "rev": "ebe4301cbd8f81c4f8d3244b3632338bbeb6d49c",
         "type": "github"
       },
       "original": {
@@ -259,11 +259,11 @@
     "rust-analyzer-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1742296961,
-        "narHash": "sha256-gCpvEQOrugHWLimD1wTFOJHagnSEP6VYBDspq96Idu0=",
+        "lastModified": 1745090513,
+        "narHash": "sha256-Jt6QPfJ69WOsGbnJc8HhfAa8e3xVIdioXyukcchxBI4=",
         "owner": "rust-lang",
         "repo": "rust-analyzer",
-        "rev": "15d87419f1a123d8f888d608129c3ce3ff8f13d4",
+        "rev": "150bb4a00fbfed34def3db1fe9aeab4c20bec921",
         "type": "github"
       },
       "original": {
@@ -276,11 +276,11 @@
     "sitl-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1743637709,
-        "narHash": "sha256-p+fou7Y9PpAZmeVeen2N+hZotyzlbVtwo7lkWVYnEQA=",
+        "lastModified": 1745180461,
+        "narHash": "sha256-nb8Yb+1r5zj4J2vUl1+ieAi87OX2wrKmdix97nbgcJ8=",
         "ref": "refs/heads/master",
-        "rev": "f1d8d7f72eef69be8e83a9baa85a3d3435553378",
-        "revCount": 67127,
+        "rev": "16eabba060a572e876671227fef4581f9cb7db7c",
+        "revCount": 67374,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/ArduPilot/ardupilot"
