@@ -1,11 +1,12 @@
 test = true
 
 [sauron_config]
-model_path = "./crates/sauron/data/yolov8n.onnx"
+model_path = "/etc/feonix-models/yolov8n.onnx"
 input_size = 640
 dataset_name = "COCO"
 fov = [93.0, 81.0]
 resolution = [4090, 2160]
+image_folder = "/etc/feonix-images"
 
 [aircraft_properties]
 turn_radius = 0.0

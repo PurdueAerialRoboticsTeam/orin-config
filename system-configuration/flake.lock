@@ -48,15 +48,16 @@
         "sitl-src": "sitl-src"
       },
       "locked": {
-        "lastModified": 1744768438,
-        "narHash": "sha256-ZlWD1xTStd+Ca/wflbiqrMESD1Zkvn+NiFqGfqJWarU=",
-        "ref": "refs/heads/master",
-        "rev": "e2149c2b0094da58f1886156268a6e5707909801",
-        "revCount": 632,
+        "lastModified": 1745103178,
+        "narHash": "sha256-BU2oyy4r04QiGgxFuXBSWVIJGcaWIOYxPZ9ytKa+tNU=",
+        "ref": "systemManagerTest",
+        "rev": "bad57a41acbf52c17689e8c4c1c51993f91efa45",
+        "revCount": 610,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git"
       },
       "original": {
+        "ref": "systemManagerTest",
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git"
       }
@@ -146,15 +147,17 @@
           "feonix",
           "nixpkgs"
         ],
+        "pyproject-build-systems": "pyproject-build-systems",
         "pyproject-nix": "pyproject-nix",
-        "utils": "utils"
+        "utils": "utils",
+        "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1744684577,
-        "narHash": "sha256-4hDRLCoknW1VrvxfK7cwolYestT9KbFMXGCihScT2MM=",
+        "lastModified": 1743532701,
+        "narHash": "sha256-yp9DjylATAIefWKp6j8Lp0YeXDt7b4/8Ld8x8RzKKAs=",
         "ref": "refs/heads/master",
-        "rev": "cb27e5fe23bbbb89fdec133731ab1a4eb916157e",
-        "revCount": 155,
+        "rev": "ff62d4c9fed96c19f825aaba9cf1b5653995181c",
+        "revCount": 136,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/GNC-2024-2025.git"
       },
@@ -196,11 +199,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1744463964,
-        "narHash": "sha256-LWqduOgLHCFxiTNYi3Uj5Lgz0SR+Xhw3kr/3Xd0GPTM=",
+        "lastModified": 1744932701,
+        "narHash": "sha256-fusHbZCyv126cyArUwwKrLdCkgVAIaa/fQJYFlCEqiU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2631b0b7abcea6e640ce31cd78ea58910d31e650",
+        "rev": "b024ced1aac25639f8ca8fdfc2f8c4fbd66c48ef",
         "type": "github"
       },
       "original": {
@@ -223,6 +226,38 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pyproject-build-systems": {
+      "inputs": {
+        "nixpkgs": [
+          "feonix",
+          "gnc-flake",
+          "nixpkgs"
+        ],
+        "pyproject-nix": [
+          "feonix",
+          "gnc-flake",
+          "pyproject-nix"
+        ],
+        "uv2nix": [
+          "feonix",
+          "gnc-flake",
+          "uv2nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742689179,
+        "narHash": "sha256-kDXV6r6pQp6sxBKKxXqcTGPdiH63m8WA+IvzHhdZlEg=",
+        "owner": "pyproject-nix",
+        "repo": "build-system-pkgs",
+        "rev": "5c2a1faadc4015d50eb9919a8e20c112f3765fc2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pyproject-nix",
+        "repo": "build-system-pkgs",
         "type": "github"
       }
     },
@@ -338,6 +373,33 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "uv2nix": {
+      "inputs": {
+        "nixpkgs": [
+          "feonix",
+          "gnc-flake",
+          "nixpkgs"
+        ],
+        "pyproject-nix": [
+          "feonix",
+          "gnc-flake",
+          "pyproject-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743267007,
+        "narHash": "sha256-A5lFzCjO3kBnpUewPaHoM1f6qgubDqw7bgIGSi5i0JE=",
+        "owner": "pyproject-nix",
+        "repo": "uv2nix",
+        "rev": "ede084fd69a0b656acb1ac20e6609385a3f967ba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pyproject-nix",
+        "repo": "uv2nix",
         "type": "github"
       }
     }
