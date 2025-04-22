@@ -24,6 +24,9 @@
             ./modules/feonix-base.nix
             {
               config = {
+                environment.systemPackages = [
+                  system-manager.packages.${system}.default
+                ];
                 nixpkgs.hostPlatform = system;
                 system-manager.allowAnyDistro = true;
                 # services.feonix.enable = true;
