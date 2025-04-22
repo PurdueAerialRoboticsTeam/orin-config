@@ -28,6 +28,7 @@
                   system-manager.packages.${system}.default
                 ];
                 nixpkgs.hostPlatform = system;
+                nixpkgs.config.allowUnfree = true;
                 system-manager.allowAnyDistro = true;
                 # services.feonix.enable = true;
               };
