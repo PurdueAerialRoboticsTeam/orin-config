@@ -49,11 +49,11 @@
         "sitl-src": "sitl-src"
       },
       "locked": {
-        "lastModified": 1745355803,
-        "narHash": "sha256-tUXLoa9AaTunqx9IvtA/+T4FyQpY2CIYPS0CUoPN23o=",
+        "lastModified": 1745364439,
+        "narHash": "sha256-qsthke2URpV0Ts7m0zBM4033fZPbqizCSuoApW6sOD4=",
         "ref": "process-flake",
-        "rev": "8eff70d561f9de7a3e0c60b8ff19dace07387837",
-        "revCount": 695,
+        "rev": "77559b476120841b470563525a3e9b1bf36260ca",
+        "revCount": 696,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git"
       },
@@ -152,11 +152,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1745025886,
-        "narHash": "sha256-0y6VcWzBfmjvYTuKPE9dGPOyfVljqtJ39Set8okBVoU=",
+        "lastModified": 1745364322,
+        "narHash": "sha256-PKgpO3jDpJhth9ddtdUF+Srnlia1DTLZihd9Wz2RTEI=",
         "ref": "refs/heads/master",
-        "rev": "363eefcbc045d50e5333f3b4c60bd5ec93fb2f24",
-        "revCount": 160,
+        "rev": "d0b15d935d3f73cf0f849bf04548e1d560352ce5",
+        "revCount": 162,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/GNC-2024-2025.git"
       },
@@ -198,11 +198,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1744932701,
-        "narHash": "sha256-fusHbZCyv126cyArUwwKrLdCkgVAIaa/fQJYFlCEqiU=",
+        "lastModified": 1745234285,
+        "narHash": "sha256-GfpyMzxwkfgRVN0cTGQSkTC0OHhEkv3Jf6Tcjm//qZ0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b024ced1aac25639f8ca8fdfc2f8c4fbd66c48ef",
+        "rev": "c11863f1e964833214b767f4a369c6e6a7aba141",
         "type": "github"
       },
       "original": {
