@@ -44,7 +44,7 @@
         description = "Feonix Core Service";
         wantedBy = [ "multi-user.target" ];
         serviceConfig = {
-          ExecStart = "${lib.getExe feonix.packages.${pkgs.system}.default}";
+          ExecStart = "${lib.getExe feonix.packages.${pkgs.system}.jetson}";
           Restart = "always";
           Environment = [
             "PC_DISABLE_TUI=1" # Disable process compose terminal ui
