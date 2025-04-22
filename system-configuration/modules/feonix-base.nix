@@ -44,9 +44,10 @@
         description = "Feonix Core Service";
         wantedBy = [ "multi-user.target" ];
         serviceConfig = {
-          ExecStart = "${feonix.packages.${pkgs.system}.default}/bin/dad";
+          ExecStart = "${lib.getExe feonix.packages.${pkgs.system}.default}";
           Restart = "always";
           Environment = [
+            "PC_DISABLE_TUI=1" # Disable process compose terminal ui
             "FEONIX_CONFIG_PATH=/etc/feonix-config.toml"
             "ORT_LIB_LOCATION=${pkgs.onnxruntime}/lib"
             "LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.cudatoolkit}/lib"

@@ -45,19 +45,20 @@
         "git-hooks-nix": "git-hooks-nix",
         "gnc-flake": "gnc-flake",
         "nixpkgs": "nixpkgs",
+        "process-compose-flake": "process-compose-flake",
         "sitl-src": "sitl-src"
       },
       "locked": {
-        "lastModified": 1745183451,
-        "narHash": "sha256-2hhHWamjjK32N6vSQw0H9wVpT47NS4WF+bxccFGk5n8=",
-        "ref": "systemManagerTest",
-        "rev": "9c91afa773707680bc58f594f5f1d03360cf66e1",
-        "revCount": 652,
+        "lastModified": 1745301997,
+        "narHash": "sha256-kqd8ywf8tjPt/cHW5Q9kCG9mfRAWDpileUOiKDB2x34=",
+        "ref": "process-flake",
+        "rev": "28213edd67ec6c60a36ca2bcef70a94d16b09679",
+        "revCount": 683,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git"
       },
       "original": {
-        "ref": "systemManagerTest",
+        "ref": "process-flake",
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git"
       }
@@ -224,6 +225,21 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "process-compose-flake": {
+      "locked": {
+        "lastModified": 1740324671,
+        "narHash": "sha256-djc+wRG9L70jlW95Ck4GKr7nTPp1drfsXshJkYZAd9s=",
+        "owner": "Platonic-Systems",
+        "repo": "process-compose-flake",
+        "rev": "2a17e49b8a5d32278ed77e4a881f992472be18a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Platonic-Systems",
+        "repo": "process-compose-flake",
         "type": "github"
       }
     },

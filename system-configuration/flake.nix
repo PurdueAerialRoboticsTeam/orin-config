@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     system-manager.url = "github:numtide/system-manager";
-    feonix.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git?ref=systemManagerTest";
+    feonix.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git?ref=process-flake";
   };
 
   outputs = {
