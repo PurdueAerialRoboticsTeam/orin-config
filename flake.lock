@@ -49,11 +49,11 @@
         "sitl-src": "sitl-src"
       },
       "locked": {
-        "lastModified": 1745364816,
-        "narHash": "sha256-YuO3hgISyrsMJhbVDbqQHhWxCUDjkPOXzppLgrZcOlY=",
+        "lastModified": 1745369235,
+        "narHash": "sha256-ZWwQcJUBj1lWBFMxswKP6NExz2RW3lxHnY5iQ4Q4e7A=",
         "ref": "refs/heads/master",
-        "rev": "71768e95b7f3a7d8ee43bbcd2b983f7eeea8f18a",
-        "revCount": 698,
+        "rev": "e79a925bb33b1e715235ac2623110076c88c21b5",
+        "revCount": 702,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git"
       },
