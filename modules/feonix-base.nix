@@ -36,10 +36,6 @@
       environment.etc."feonix-config.toml".source = pkgs.lib.cleanSource ./feonix-config.toml;
       environment.etc."feonix-models/yolov8n.onnx".source = pkgs.lib.cleanSource ./models/yolov8n.onnx;
 
-      systemd.tmpfiles.rules = [
-        "L+ /feonix-images - - - - ${./images}"
-      ];
-
       systemd.services.feonix-core = {
         description = "Feonix Core Service";
         wantedBy = [ "multi-user.target" ];
