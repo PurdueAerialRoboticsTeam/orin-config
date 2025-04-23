@@ -49,11 +49,11 @@
         "sitl-src": "sitl-src"
       },
       "locked": {
-        "lastModified": 1745364816,
-        "narHash": "sha256-YuO3hgISyrsMJhbVDbqQHhWxCUDjkPOXzppLgrZcOlY=",
+        "lastModified": 1745368461,
+        "narHash": "sha256-ZxjdRP9jjb7XHZaIfExtwX8w9Ru3refUCaFhJsYDXF0=",
         "ref": "refs/heads/master",
-        "rev": "71768e95b7f3a7d8ee43bbcd2b983f7eeea8f18a",
-        "revCount": 698,
+        "rev": "a87463ef657f72312ce88d3f3c30834d128a47ec",
+        "revCount": 701,
         "type": "git",
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git"
       },
@@ -164,6 +164,24 @@
         "url": "ssh://git@github.com/PurdueAerialRoboticsTeam/GNC-2024-2025.git"
       }
     },
+    "nix-vm-test": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1745226281,
+        "narHash": "sha256-WZ/lHlmA1YqcmJzC3yjfet+tAAYLGOAKmZJHXhNUNZM=",
+        "owner": "numtide",
+        "repo": "nix-vm-test",
+        "rev": "4ae775c71f4e76b3b4c82b14f22db9f72a4d0748",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "nix-vm-test",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1744868846,
@@ -197,6 +215,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1708475490,
+        "narHash": "sha256-g1v0TsWBQPX97ziznfJdWhgMyMGtoBFs102xSYO4syU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "0e74ca98a74bc7270d28838369593635a5db3260",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1745234285,
         "narHash": "sha256-GfpyMzxwkfgRVN0cTGQSkTC0OHhEkv3Jf6Tcjm//qZ0=",
         "owner": "NixOS",
@@ -211,7 +245,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1738546358,
         "narHash": "sha256-nLivjIygCiqLp5QcL7l56Tca/elVqM9FG1hGd9ZSsrg=",
@@ -267,7 +301,8 @@
     "root": {
       "inputs": {
         "feonix": "feonix",
-        "nixpkgs": "nixpkgs_2",
+        "nix-vm-test": "nix-vm-test",
+        "nixpkgs": "nixpkgs_3",
         "system-manager": "system-manager"
       }
     },
@@ -308,7 +343,7 @@
     },
     "system-manager": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1744139528,

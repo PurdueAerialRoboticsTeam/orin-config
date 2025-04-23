@@ -3,6 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     system-manager.url = "github:numtide/system-manager";
     feonix.url = "git+ssh://git@github.com/PurdueAerialRoboticsTeam/feonix.git";
+    nix-vm-test.url = "github:numtide/nix-vm-test";
   };
 
   outputs = {
@@ -10,6 +11,7 @@
     nixpkgs,
     system-manager,
     feonix,
+
     ...
   } @ inputs: let
     inherit (self) outputs;
