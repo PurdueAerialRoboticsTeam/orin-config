@@ -13,9 +13,10 @@
 
       [ipv4]
       method=manual
-      address1=192.168.144.5/24,192.168.144.25
+      address1=192.168.144.5/24
       never-default=true
       dns-priority=-1
+      routes1=192.168.144.0/24,192.168.144.25
       may-fail=false
 
       [ipv6]
