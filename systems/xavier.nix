@@ -16,8 +16,11 @@
       address1=192.168.144.5/24
       never-default=true
       dns-priority=-1
-      routes1=192.168.144.0/24,192.168.144.25
-      may-fail=false
+
+      [ipv4-route1]
+      dest=192.168.144.0/24
+      next-hop=192.168.144.25
+      on-link=true
 
       [ipv6]
       method=ignore
