@@ -1,6 +1,30 @@
 {
   system = "aarch64-linux";
   module = {...}: {
+  systemd.services.NetworkManager.enable = true;
+
+  environment.etc."NetworkManager/system-connections/eth0.nmconnection" = {
+    text = ''
+      [connection]
+      id=eth0
+      type=ethernet
+      interface-name=eth0
+      autoconnect=true
+
+      [ipv4]
+      method=manual
+      address1=192.168.144.5/24,192.168.144.25
+      never-default=true
+      dns-priority=-1
+      may-fail=false
+
+      [ipv6]
+      method=ignore
+    '';
+    mode = "0600";
+  };
+
+    /*
     environment.etc."systemd/network/eth0.network".text = ''
       [Match]
       Name=eth0
@@ -29,4 +53,5 @@
       RouteMetric=100
     '';
   };
+  */
 }
