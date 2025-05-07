@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-/*
+  /*
   config = {
     # CUDA configuration (CORRECTED)
     environment.variables = {
@@ -22,5 +22,5 @@
     cudaPackages.tensorrt
     nvidia-jetpack
   ];
-*/
+  */
 }

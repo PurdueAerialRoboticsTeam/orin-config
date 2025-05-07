@@ -1,4 +1,4 @@
-test = true
+test = false
 
 [sauron_config]
 model_path = "/etc/feonix-models/yolov8n.onnx"
@@ -6,7 +6,9 @@ input_size = 640
 dataset_name = "COCO"
 fov = [93.0, 81.0]
 resolution = [4090, 2160]
-image_folder = "/feonix-images"
+untagged_image_folder = "/feonix-images/untagged"
+detection_image_folder = "/feonix-images/detection"
+mapping_image_folder = "/feonix-images/mapping"
 
 [aircraft_properties]
 turn_radius = 0.0
@@ -50,9 +52,10 @@ x = 38.315607
 y = -76.5508
 
 [commconfig]
-dad_gnc_port = 5557
-gnc_dad_port = 5557
-dad_sauron_port = 5556
-sauron_dad_port = 5556
+dad_gnc_port = 5555
+gnc_dad_port = 5558
+dad_sauron_port = 5526
+sauron_dad_port = 5527
 groundstation_ip = "192.168.1.1"
 flightcomputer_ip = "192.168.1.1"
+

@@ -9,54 +9,42 @@
     self,
     nixpkgs,
     system-manager,
-    feonix,
     ...
   } @ inputs: let
     inherit (self) outputs;
-    mkSystemManager = {
-      system ? "aarch64-linux",
-      extraModules ? [],
-    }:
-      system-manager.lib.makeSystemConfig {
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules =
-          [
-            ./modules/feonix-base.nix
-            {
-              config = {
-                environment.systemPackages = [
-                  system-manager.packages.${system}.default
-                ];
-                nixpkgs.hostPlatform = system;
-                nixpkgs.config.allowUnfree = true;
-                system-manager.allowAnyDistro = true;
-                # services.feonix.enable = true;
-              };
-            }
-          ]
-          ++ extraModules;
-      };
+    lib = nixpkgs.lib;
+
+    systemDefs = import ./lib/readModuleMap.nix {
+      inherit lib;
+      dir = ./systems;
+    };
+    configurations = import ./lib/readModuleMap.nix {
+      inherit lib;
+      dir = ./configurations;
+    };
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-    formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.nixpkgs-fmt;
-    systemConfigs = {
-      default = mkSystemManager {
-        extraModules = [
-          ./modules/jetson-hardware.nix
-          {
-            _module.args.feonix = feonix;
-          }
-        ];
-      };
-      dev = mkSystemManager {
-        system = "x86_64-linux";
-        extraModules = [
-          { _module.args.feonix = feonix; }
-          {
-            config = { nixpkgs.config.allowUnfree = true; };
-          }
-        ];
-      };
-    };
+    formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
+    systemConfigs = builtins.listToAttrs (
+      builtins.concatMap (
+        systemName: let
+          systemDef = systemDefs.${systemName};
+        in
+          builtins.map (configurationName: {
+            name = "${systemName}-${configurationName}";
+            value = system-manager.lib.makeSystemConfig {
+              extraSpecialArgs = {
+                inherit inputs outputs;
+                inherit (systemDef) system;
+              };
+              modules = [
+                ./modules/common.nix
+                systemDef.module
+                configurations.${configurationName}
+              ];
+            };
+          }) (builtins.attrNames configurations)
+      ) (builtins.attrNames systemDefs)
+    );
   };
 }
