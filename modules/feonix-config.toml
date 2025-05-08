@@ -14,10 +14,13 @@ mapping_image_folder = "/feonix-images/mapping"
 turn_radius = 0.0
 velocity = 0.0
 
+[coordinates]
+flying_threshold = 0
+mapping_threshold = 0
+
 [[coordinates.waypoints]]
 x = 0.0
 y = 0.0
-
 
 [[coordinates.mapping_area]]
 x = 38.314816
