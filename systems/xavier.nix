@@ -1,8 +1,6 @@
 {
   system = "aarch64-linux";
   module = {...}: {
-  systemd.services.NetworkManager.enable = true;
-
   environment.etc."NetworkManager/system-connections/eth0.nmconnection" = {
     text = ''
       [connection]
