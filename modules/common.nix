@@ -2,6 +2,7 @@
   inputs,
   system,
   system-manager,
+  pkgs,
   ...
 }: {
   imports = [
@@ -13,6 +14,7 @@
 
     environment.systemPackages = [
       inputs.system-manager.packages.${system}.default
+      pkgs.nix-output-monitor
     ];
     system-manager.allowAnyDistro = true;
 
